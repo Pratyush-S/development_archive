@@ -1,4 +1,3 @@
-# Complete project details at https://RandomNerdTutorials.com/raspberry-pi-pico-dht11-dht22-micropython/
 
 from machine import Pin
 from time import sleep
