@@ -1,0 +1,20 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: X:/Programs/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto c1c0377be60648da9d36dc3420fb5eaf --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot memory_manager_wrapper_behav xil_defaultlib.memory_manager_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.Reconstructor [reconstructor_default]
+Compiling architecture memory_manager_reconstructor_0_0_arch of entity xil_defaultlib.memory_manager_Reconstructor_0_0 [memory_manager_reconstructor_0_0...]
+Compiling architecture structure of entity xil_defaultlib.memory_manager [memory_manager_default]
+Compiling architecture structure of entity xil_defaultlib.memory_manager_wrapper
+Built simulation snapshot memory_manager_wrapper_behav

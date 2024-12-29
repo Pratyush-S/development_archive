@@ -1,0 +1,8 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "X:/FPGA/EZ7/uart2_2019_1/uart2_2019_1.srcs/sources_1/new/Reconstructor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Reconstructor'
+INFO: [VRFC 10-163] Analyzing VHDL file "X:/FPGA/EZ7/uart2_2019_1/uart2_2019_1.ip_user_files/bd/memory_manager/ip/memory_manager_Reconstructor_0_0/sim/memory_manager_Reconstructor_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'memory_manager_Reconstructor_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "X:/FPGA/EZ7/uart2_2019_1/uart2_2019_1.ip_user_files/bd/memory_manager/sim/memory_manager.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'memory_manager'
+INFO: [VRFC 10-163] Analyzing VHDL file "X:/FPGA/EZ7/uart2_2019_1/uart2_2019_1.srcs/sources_1/bd/memory_manager/hdl/memory_manager_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'memory_manager_wrapper'

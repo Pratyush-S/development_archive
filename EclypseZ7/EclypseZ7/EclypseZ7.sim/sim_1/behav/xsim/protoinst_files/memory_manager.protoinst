@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"memory_manager": {
+			"proto_instances": {
+			}
+		}
+	}
+}
