@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sun Dec 29 21:29:53 2024
+# Process ID: 5008
+# Current directory: C:/Users/shukl/Desktop/From_github/Hardware_development_archive/EclypseZ7/E7_adc_dac_loopback/adc_dac_loopback
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13360 C:\Users\shukl\Desktop\From_github\Hardware_development_archive\EclypseZ7\E7_adc_dac_loopback\adc_dac_loopback\adc_dac_loopback.xpr
+# Log file: C:/Users/shukl/Desktop/From_github/Hardware_development_archive/EclypseZ7/E7_adc_dac_loopback/adc_dac_loopback/vivado.log
+# Journal file: C:/Users/shukl/Desktop/From_github/Hardware_development_archive/EclypseZ7/E7_adc_dac_loopback/adc_dac_loopback\vivado.jou
+# Running On        :lappy
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :AMD Ryzen 7 5700U with Radeon Graphics         
+# CPU Frequency     :1797 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :16441 MB
+# Swap memory       :1275 MB
+# Total Virtual     :17716 MB
+# Available Virtual :10208 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/shukl/Desktop/From_github/Hardware_development_archive/EclypseZ7/E7_adc_dac_loopback/adc_dac_loopback/adc_dac_loopback.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/shukl/Desktop/From_github/Hardware_development_archive/EclypseZ7/E7_adc_dac_loopback/adc_dac_loopback'
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+CRITICAL WARNING: [Project 1-19] Could not find the file 'D:/Research_Project/Sanbox_6_1/jesd204_5_ex/imports/sine_lut64_14bit.vh'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_3.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_3_ZmodScopeController_0_1
+
+open_project: Time (s): cpu = 00:01:00 ; elapsed = 00:00:46 . Memory (MB): peak = 1829.363 ; gain = 600.066
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/shukl/Desktop/From_github/Hardware_development_archive/EclypseZ7/E7_adc_dac_loopback/adc_dac_loopback/adc_dac_loopback.srcs/sources_1/bd/design_3/design_3.bd}
+Reading block design file <C:/Users/shukl/Desktop/From_github/Hardware_development_archive/EclypseZ7/E7_adc_dac_loopback/adc_dac_loopback/adc_dac_loopback.srcs/sources_1/bd/design_3/design_3.bd>...
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- digilent.com:user:ZmodScopeController:1.2 - ZmodScopeController_0
+CRITICAL WARNING: [BD 41-51] Could not find bus definition for the interface: ExtCh1Calib 
+CRITICAL WARNING: [BD 41-49] Could not find abstraction definition for the interface: ExtCh1Calib 
+CRITICAL WARNING: [BD 41-49] Could not find abstraction definition for the interface: ExtCh1Calib 
+CRITICAL WARNING: [BD 41-51] Could not find bus definition for the interface: ExtCh2Calib 
+CRITICAL WARNING: [BD 41-49] Could not find abstraction definition for the interface: ExtCh2Calib 
+CRITICAL WARNING: [BD 41-49] Could not find abstraction definition for the interface: ExtCh2Calib 
+Successfully read diagram <design_3> from block design file <C:/Users/shukl/Desktop/From_github/Hardware_development_archive/EclypseZ7/E7_adc_dac_loopback/adc_dac_loopback/adc_dac_loopback.srcs/sources_1/bd/design_3/design_3.bd>
+open_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2155.062 ; gain = 1.383

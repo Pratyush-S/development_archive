@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../uart2_2019_1.srcs/sources_1/new/Reconstructor.vhd" \
+"../../../../uart2_2019_1.ip_user_files/bd/memory_manager/ip/memory_manager_Reconstructor_0_0/sim/memory_manager_Reconstructor_0_0.vhd" \
+"../../../../uart2_2019_1.ip_user_files/bd/memory_manager/sim/memory_manager.vhd" \
+"../../../../uart2_2019_1.srcs/sources_1/bd/memory_manager/hdl/memory_manager_wrapper.vhd" \
+
+# Do not sort compile order
+nosort
