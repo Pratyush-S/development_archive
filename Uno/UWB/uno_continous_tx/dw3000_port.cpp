@@ -455,14 +455,14 @@ int readfromspi(uint16_t headerLength, uint8_t *headerBuffer, uint16_t readLengt
   digitalWrite(_ss, LOW);
   for(int i = 0; i < headerLength; i++) {
     SPI.transfer(headerBuffer[i]); // send header
-//    printf("read header: %d  %x \n\r",headerBuffer[i],headerBuffer[i]); // printing the header
+    //printf("read header: %d  %c \n\r",headerBuffer[i],headerBuffer[i]); // printing the header
   }
 
   for(int i = 0; i < readLength; i++) {
     readBuffer[i] = SPI.transfer(JUNK); // read values
   }
   for(int i = 0; i < readLength; i++) {
-//    printf("read data: %d  %x \n\r",readBuffer[i],readBuffer[i]); // printing the header
+    //printf("read data: %d  %c \n\r",readBuffer[i],readBuffer[i]); // printing the header
 
   }
   delayMicroseconds(5);
@@ -494,12 +494,12 @@ int writetospi(uint16_t headerLength, uint8_t *headerBuffer, uint16_t bodyLength
   digitalWrite(_ss, LOW);
   for(int i = 0; i < headerLength; i++) {
     SPI.transfer(headerBuffer[i]); // send header
-  //  printf("header: %d  %c \n\r",headerBuffer[i],headerBuffer[i]); // printing the header
+    //printf("write header: %d  %c \n\r",headerBuffer[i],headerBuffer[i]); // printing the header
 
   }
   for(int i = 0; i < bodyLength; i++) {
     SPI.transfer(bodyBuffer[i]); // write values
-   //   printf("body: %d  %c \n\r",bodyBuffer[i],bodyBuffer[i]); // printing the header
+     // printf("write body: %d  %c \n\r",bodyBuffer[i],bodyBuffer[i]); // printing the header
 
   }
   delayMicroseconds(5);
@@ -537,6 +537,9 @@ void port_set_dw_ic_spi_fastrate(uint8_t irq, uint8_t rst, uint8_t ss) {
     spiBegin(irq, rst);
     spiSelect(ss);
 }
+
+
+
 
 
 /* DW IC IRQ handler definition. */

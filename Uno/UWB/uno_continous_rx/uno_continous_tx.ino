@@ -1,13 +1,18 @@
 #include "dw3000.h"
+#include "ps_uwb.h"
 
 #define APP_NAME "SIMPLE RX v1.1"
 
-// connection pins
+// connection pins UNO
 const uint8_t PIN_RST = 7;  // reset pin
 const uint8_t PIN_IRQ = 8;   // irq pin
 const uint8_t PIN_SS = 10;    // spi select pin
 
+////Buzzer
+const int buzzer = 2; //buzzer to arduino pin 9
+
 /*
+
 
 const uint8_t PIN_RST = 15; // reset pin
 const uint8_t PIN_IRQ = 4; // irq pin
@@ -15,12 +20,14 @@ const uint8_t PIN_SS = 5;   // spi select pin
 
 */
 /////////////// TWR resources
-
+//UWB
 static uint8_t tx_poll_msg[] = { 0x41, 0x88, 0, 'C', 'O', 'N', 'T', 'I', 'N','U','O', 'U', 'S', ' ', ' ', ' ' };
+#define FRAME_LENGTH (sizeof(tx_poll_msg) + FCS_LEN)  // The real length that is going to be transmitted
+
+
 
 #define BLINK_FRAME_SN_IDX 1
 
-#define FRAME_LENGTH (sizeof(tx_poll_msg) + FCS_LEN)  // The real length that is going to be transmitted
 
 
 extern dwt_txconfig_t txconfig_options;
@@ -42,19 +49,14 @@ static uint8_t frame_seq_nb = 0;
 #define RESP_RX_TIMEOUT_UUS 100000000
 
 /* Inter-frame delay period, in milliseconds. */
-#define TX_DELAY_MS 4000
+#define TX_DELAY_MS 100
 
 
 uint64_t poll_tx_ts,poll_tx_ts_old,poll_tx_ts_diff;
 
 
 
-////Buzzer
-const int buzzer = 2; //buzzer to arduino pin 9
 
-
-////function prototypes
-void read_message_buffer();
 
 
 
@@ -141,6 +143,7 @@ void loop() {
 
 
   simple_tx();
+
 }
 
 
@@ -194,84 +197,57 @@ void read_message_buffer() {
 }
 
 
-
 void simple_tx() {
 
-  /* Write frame data to DW IC and prepare transmission. See NOTE 3 below.*/
-  dwt_writetxdata(FRAME_LENGTH - FCS_LEN, tx_poll_msg, 0); /* Zero offset in TX buffer. */
+    /* Write frame data to DW IC and prepare transmission. See NOTE 3 below.*/
+    dwt_writetxdata(FRAME_LENGTH - FCS_LEN, tx_poll_msg, 0); /* Zero offset in TX buffer. */
 
 
-  dwt_writetxfctrl(FRAME_LENGTH, 0, 0); /* Zero offset in TX buffer, no ranging. */
+    dwt_writetxfctrl(FRAME_LENGTH, 0, 0); /* Zero offset in TX buffer, no ranging. */
 
-  /* Start transmission. */
-  dwt_starttx(DWT_START_TX_IMMEDIATE);
-  Sleep(TX_DELAY_MS);
+    /* Start transmission. */
+    dwt_starttx(DWT_START_TX_IMMEDIATE);
+    Sleep(TX_DELAY_MS);
 
-  /* Poll DW IC until TX frame sent event set. See NOTE 4 below.
-   * STATUS register is 4 bytes long but, as the event we are looking at is in the first byte of the register, we can use this simplest API
-   * function to access it.*/
+    /* Poll DW IC until TX frame sent event set. See NOTE 4 below.
+     * STATUS register is 4 bytes long but, as the event we are looking at is in the first byte of the register, we can use this simplest API
+     * function to access it.*/
+    while (!(dwt_read32bitreg(SYS_STATUS_ID) & SYS_STATUS_TXFRS_BIT_MASK)) {
+        
+    };
 
-  while (!(dwt_read32bitreg(SYS_STATUS_ID) & SYS_STATUS_TXFRS_BIT_MASK)) {
-    test_run_info((unsigned char *)"WHAT!!!\r\n");
-    /* Reads and validate device ID returns DWT_ERROR if it does not match expected else DWT_SUCCESS */
-    // if (dwt_check_dev_id() == DWT_SUCCESS)
-    {
-      //    UART_puts((char *)"DEV ID OK");
-    }
-    // else
-    {
-      //    UART_puts((char *)"DEV ID FAILED");
-    }
-    // delay(500);
-    // dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_TXFRS_BIT_MASK);
-    // delay(1000);
-  };
-
-  //printf("Ping sent. Sequence number: %d\n\r", frame_seq_nb);
+    /* Clear TX frame sent event. */
+    dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_TXFRS_BIT_MASK);
 
 
-  /* Clear TX frame sent event. */
-  dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_TXFRS_BIT_MASK);
+    /* Execute a delay between transmissions. */
+
+    /* Increment the blink frame sequence number (modulo 256). */
+    tx_poll_msg[ALL_MSG_SN_IDX] = frame_seq_nb;
+    frame_seq_nb = frame_seq_nb + 1;
 
 
-  /* Execute a delay between transmissions. */
+    // poll_rx_ts,poll_rx_ts_old,poll_rx_ts_diff;
 
-  /* Increment the blink frame sequence number (modulo 256). */
-  tx_poll_msg[ALL_MSG_SN_IDX] = frame_seq_nb;
-  frame_seq_nb = frame_seq_nb + 1;
+    /* Retrieve poll reception timestamp. */
+    poll_tx_ts = get_tx_timestamp_u64();
+    poll_tx_ts_diff = poll_tx_ts - poll_tx_ts_old;
 
-  
-  // poll_rx_ts,poll_rx_ts_old,poll_rx_ts_diff;
+    //printf("Ping sent. Sequence number: %d\n\r", frame_seq_nb);
 
-  /* Retrieve poll reception timestamp. */  
-  poll_tx_ts = get_tx_timestamp_u64();
-  poll_tx_ts_diff=poll_tx_ts-poll_tx_ts_old;
-  
-   Serial.print("sending frame number : ");
-   Serial.println(frame_seq_nb);
-   single_beep();   
+    Serial.print("sending frame number : ");
+    Serial.println(frame_seq_nb);
+    //single_beep();   
 
-
-  
-
-  poll_tx_ts_old=poll_tx_ts;
-
-
-  //printf("old time stamp : %llu\n", poll_rx_ts_old);
-  //printf("new time stamp : %llu\n", poll_rx_ts);
-  //printf("dif time stamp : %llu\n", poll_tx_ts_diff);
-
-
-  //poll_tx_ts_old=poll_tx_ts;
-
-//  printf("----------------------------------------------------------\n\r");
 }
 
-void single_beep(){
-  tone(buzzer, 4000); // Send 1KHz sound signal...
-  delay(50);        // ...for 1 sec
-  noTone(buzzer);     // Stop sound...
+void single_beep() {
+    tone(buzzer, 4000); // Send 1KHz sound signal...
+    delay(50);        // ...for 1 sec
+    noTone(buzzer);     // Stop sound...
 }
+
+
 
 
 /*****************************************************************************************************************************************************
