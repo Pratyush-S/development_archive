@@ -1,8 +1,10 @@
-Vivado Simulator 2019.1
-Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: X:/Programs/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto c1c0377be60648da9d36dc3420fb5eaf --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot memory_manager_wrapper_behav xil_defaultlib.memory_manager_wrapper xil_defaultlib.glbl -log elaborate.log 
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot FPGA_SPI_wrapper_behav xil_defaultlib.FPGA_SPI_wrapper xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
+Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -13,8 +15,8 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package unisim.vcomponents
 Compiling module xil_defaultlib.glbl
-Compiling architecture behavioral of entity xil_defaultlib.Reconstructor [reconstructor_default]
-Compiling architecture memory_manager_reconstructor_0_0_arch of entity xil_defaultlib.memory_manager_Reconstructor_0_0 [memory_manager_reconstructor_0_0...]
-Compiling architecture structure of entity xil_defaultlib.memory_manager [memory_manager_default]
-Compiling architecture structure of entity xil_defaultlib.memory_manager_wrapper
-Built simulation snapshot memory_manager_wrapper_behav
+Compiling architecture behavioral of entity xil_defaultlib.VHDL_SPI_MASTER [vhdl_spi_master_default]
+Compiling architecture fpga_spi_vhdl_spi_master_0_0_arch of entity xil_defaultlib.FPGA_SPI_VHDL_SPI_MASTER_0_0 [fpga_spi_vhdl_spi_master_0_0_def...]
+Compiling architecture structure of entity xil_defaultlib.FPGA_SPI [fpga_spi_default]
+Compiling architecture structure of entity xil_defaultlib.fpga_spi_wrapper
+Built simulation snapshot FPGA_SPI_wrapper_behav

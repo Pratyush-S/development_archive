@@ -1,0 +1,6 @@
+vhdl xil_defaultlib  \
+"../../../bd/FPGA_SPI/ip/FPGA_SPI_VHDL_SPI_MASTER_0_0/sim/FPGA_SPI_VHDL_SPI_MASTER_0_0.vhd" \
+"../../../bd/FPGA_SPI/sim/FPGA_SPI.vhd" \
+
+# Do not sort compile order
+nosort

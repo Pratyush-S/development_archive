@@ -1,9 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../Eclypse7_Trial.srcs/sources_1/new/bram_PL_control.vhd" \
-"../../../../Eclypse7_Trial.ip_user_files/bd/bram_control/ip/bram_control_bram_PL_control_0_0/sim/bram_control_bram_PL_control_0_0.vhd" \
-"../../../../Eclypse7_Trial.ip_user_files/bd/bram_control/sim/bram_control.vhd" \
-"../../../../Eclypse7_Trial.srcs/sources_1/bd/bram_control/hdl/bram_control_wrapper.vhd" \
-
-# Do not sort compile order
-nosort

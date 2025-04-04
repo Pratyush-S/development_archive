@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../EclypseZ7.srcs/sources_1/new/VHDL_SPI_MASTER.vhd" \
+"../../../../EclypseZ7.ip_user_files/bd/FPGA_SPI/ip/FPGA_SPI_VHDL_SPI_MASTER_0_0/sim/FPGA_SPI_VHDL_SPI_MASTER_0_0.vhd" \
+"../../../../EclypseZ7.ip_user_files/bd/FPGA_SPI/sim/FPGA_SPI.vhd" \
+"../../../../EclypseZ7.gen/sources_1/bd/FPGA_SPI/hdl/FPGA_SPI_wrapper.vhd" \
+
+# Do not sort compile order
+nosort
